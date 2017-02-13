@@ -21,23 +21,12 @@
       <file leaf-file-name="preprocessor.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/preprocessor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="47" column="18" lean-forward="false" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
+            <state relative-caret-position="375">
+              <caret line="47" column="81" lean-forward="true" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="81" />
               <folding>
                 <element signature="e#24#43#0" expanded="true" />
                 <element signature="e#278#601#0" expanded="false" />
-                <element signature="e#1146#1340#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NRCReader.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/NRCReader.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="5" column="30" lean-forward="false" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -45,22 +34,24 @@
       <file leaf-file-name="analyzer.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/analyzer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
-              <caret line="86" column="0" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+            <state relative-caret-position="359">
+              <caret line="164" column="40" lean-forward="true" selection-start-line="164" selection-start-column="40" selection-end-line="164" selection-end-column="40" />
               <folding>
-                <element signature="e#0#26#0" expanded="true" />
-                <element signature="e#1314#1365#0" expanded="false" />
+                <element signature="e#210#368#0" expanded="false" />
+                <element signature="e#1069#1201#0" expanded="false" />
+                <element signature="e#1285#1404#0" expanded="false" />
+                <element signature="e#1343#1394#0" expanded="false" />
+                <element signature="e#1991#2347#0" expanded="false" />
+                <element signature="e#2130#2274#0" expanded="false" />
+                <element signature="e#2175#2274#0" expanded="false" />
+                <element signature="e#2377#3238#0" expanded="false" />
+                <element signature="e#2575#2615#0" expanded="false" />
+                <element signature="e#3075#3116#0" expanded="false" />
+                <element signature="e#3275#3383#0" expanded="false" />
+                <element signature="e#4970#5194#0" expanded="false" />
+                <element signature="e#5029#5194#0" expanded="false" />
+                <element signature="e#5442#5632#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="scratch.py" pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="11" lean-forward="true" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -78,6 +69,8 @@
     <findStrings>
       <find>nrcDi</find>
       <find>window</find>
+      <find>_p</find>
+      <find>.read</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -86,6 +79,7 @@
         <option value="$PROJECT_DIR$/NRCReader.py" />
         <option value="$PROJECT_DIR$/preprocessor.py" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.py" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_1.py" />
         <option value="$PROJECT_DIR$/analyzer.py" />
       </list>
     </option>
@@ -112,7 +106,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -127,6 +120,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -199,6 +193,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="code" />
       <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/scratch.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="scratch_1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$APPLICATION_CONFIG_DIR$/scratches" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="code" />
+      <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/scratch_1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -337,18 +348,20 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <list size="4">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.preprocessor" />
       <item index="1" class="java.lang.String" itemvalue="Python.NRCReader" />
       <item index="2" class="java.lang.String" itemvalue="Python.analyzer" />
       <item index="3" class="java.lang.String" itemvalue="Python.scratch" />
+      <item index="4" class="java.lang.String" itemvalue="Python.scratch_1" />
     </list>
     <recent_temporary>
-      <list size="4">
+      <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python.analyzer" />
-        <item index="1" class="java.lang.String" itemvalue="Python.scratch" />
-        <item index="2" class="java.lang.String" itemvalue="Python.NRCReader" />
-        <item index="3" class="java.lang.String" itemvalue="Python.preprocessor" />
+        <item index="1" class="java.lang.String" itemvalue="Python.scratch_1" />
+        <item index="2" class="java.lang.String" itemvalue="Python.scratch" />
+        <item index="3" class="java.lang.String" itemvalue="Python.NRCReader" />
+        <item index="4" class="java.lang.String" itemvalue="Python.preprocessor" />
       </list>
     </recent_temporary>
   </component>
@@ -408,7 +421,56 @@
           <folding>
             <element signature="e#24#43#0" expanded="true" />
             <element signature="e#278#601#0" expanded="false" />
-            <element signature="e#1146#1340#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NRCReader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="30" lean-forward="false" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analyzer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#210#368#0" expanded="false" />
+            <element signature="e#1069#1201#0" expanded="false" />
+            <element signature="e#1285#1404#0" expanded="false" />
+            <element signature="e#1343#1394#0" expanded="false" />
+            <element signature="e#1991#2347#0" expanded="false" />
+            <element signature="e#2130#2274#0" expanded="false" />
+            <element signature="e#2175#2274#0" expanded="false" />
+            <element signature="e#2377#3238#0" expanded="false" />
+            <element signature="e#2575#2615#0" expanded="false" />
+            <element signature="e#3075#3116#0" expanded="false" />
+            <element signature="e#3275#3383#0" expanded="false" />
+            <element signature="e#4970#5194#0" expanded="false" />
+            <element signature="e#5029#5194#0" expanded="false" />
+            <element signature="e#5442#5632#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="11" lean-forward="true" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="825">
+          <caret line="47" column="18" lean-forward="false" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
+          <folding>
+            <element signature="e#24#43#0" expanded="true" />
+            <element signature="e#278#601#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -428,7 +490,6 @@
           <folding>
             <element signature="e#24#43#0" expanded="true" />
             <element signature="e#278#601#0" expanded="false" />
-            <element signature="e#1146#1340#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -446,9 +507,29 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
-            <element signature="e#1314#1365#0" expanded="false" />
+            <element signature="e#210#368#0" expanded="false" />
+            <element signature="e#1069#1201#0" expanded="false" />
+            <element signature="e#1285#1404#0" expanded="false" />
+            <element signature="e#1343#1394#0" expanded="false" />
+            <element signature="e#1991#2347#0" expanded="false" />
+            <element signature="e#2130#2274#0" expanded="false" />
+            <element signature="e#2175#2274#0" expanded="false" />
+            <element signature="e#2377#3238#0" expanded="false" />
+            <element signature="e#2575#2615#0" expanded="false" />
+            <element signature="e#3075#3116#0" expanded="false" />
+            <element signature="e#3275#3383#0" expanded="false" />
+            <element signature="e#4970#5194#0" expanded="false" />
+            <element signature="e#5029#5194#0" expanded="false" />
+            <element signature="e#5442#5632#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="11" lean-forward="false" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -460,33 +541,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessor.py">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="47" column="18" lean-forward="false" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
-          <folding>
-            <element signature="e#24#43#0" expanded="true" />
-            <element signature="e#278#601#0" expanded="false" />
-            <element signature="e#1146#1340#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="148" lean-forward="true" selection-start-line="0" selection-start-column="148" selection-end-line="0" selection-end-column="148" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.py">
+    <entry file="file://$PROJECT_DIR$/preprocessor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="11" lean-forward="true" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
-          <folding />
+        <state relative-caret-position="375">
+          <caret line="47" column="81" lean-forward="true" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="81" />
+          <folding>
+            <element signature="e#24#43#0" expanded="true" />
+            <element signature="e#278#601#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/analyzer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="86" column="0" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+        <state relative-caret-position="359">
+          <caret line="164" column="40" lean-forward="true" selection-start-line="164" selection-start-column="40" selection-end-line="164" selection-end-column="40" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
-            <element signature="e#1314#1365#0" expanded="false" />
+            <element signature="e#210#368#0" expanded="false" />
+            <element signature="e#1069#1201#0" expanded="false" />
+            <element signature="e#1285#1404#0" expanded="false" />
+            <element signature="e#1343#1394#0" expanded="false" />
+            <element signature="e#1991#2347#0" expanded="false" />
+            <element signature="e#2130#2274#0" expanded="false" />
+            <element signature="e#2175#2274#0" expanded="false" />
+            <element signature="e#2377#3238#0" expanded="false" />
+            <element signature="e#2575#2615#0" expanded="false" />
+            <element signature="e#3075#3116#0" expanded="false" />
+            <element signature="e#3275#3383#0" expanded="false" />
+            <element signature="e#4970#5194#0" expanded="false" />
+            <element signature="e#5029#5194#0" expanded="false" />
+            <element signature="e#5442#5632#0" expanded="false" />
           </folding>
         </state>
       </provider>

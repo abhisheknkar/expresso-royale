@@ -19,7 +19,7 @@ class EmotionAnalyzer():
         fileread = False
         cleaner = TextCleaner()
         if preprocessed:
-            preprocessedFilepath = filepath[:-4]+'_p_'+'.txt'
+            preprocessedFilepath = self.folderName+'processed/'+self.textName+'_p_'+'.txt'
             if os.path.exists(preprocessedFilepath):
                 fp = open(preprocessedFilepath, 'r')
                 processedContent = fp.read()
@@ -62,8 +62,7 @@ class EmotionAnalyzer():
 
             start = end
             windowID += 1
-        self.plot()
-
+        # self.plot()
 
     def plot(self):
         x = [float(y+1)/len(self.emotionDict[self.emotions[0]])*100 for y in np.arange(len(self.emotionDict[self.emotions[0]]))]
@@ -89,12 +88,78 @@ class EmotionAnalyzer():
 
         # plt.savefig(self.folderName+self.textName+'.png')
 
+    def color(self, filepath):
+    # This function takes in a piece of text as input and outputs a colored form of the text (with each emotion-
+    # keyword colored) as output. Not preprocessing here, since there seem to be no stop words in the NRC corpus
+        folderName = filepath[:filepath.rfind('/') + 1]
+        textName = filepath[filepath.rfind('/') + 1:-4]
+        title = textName
+        outpath = folderName + 'colored/' + textName + '.tex'
+        f = open(filepath,'r')
+        content = f.read()
+        f.close()
+
+        positiveSet = set(['trust', 'joy', 'positive'])
+        negativeSet = set(['anger', 'disgust', 'fear', 'negative', 'sadness'])
+        unsureSet = set(['anticipation', 'surprise'])
+        pColor, nColor, uColor, multiColor, noColor = 'green','red','blue','BurntOrange','black'
+        lemmatizer = LemmatizerWithPOS()
+        # outString = '\\documentclass{article}\n\\usepackage[utf8]{inputenc}\n\\usepackage{color}\n\\title{'+title+'}\n\\begin{document}\n\\maketitle'
+        outString = ''
+
+        printable = set(string.printable)
+        punctuations = set(string.punctuation)
+
+        lines = content.split('\n')
+        numLines = len(lines)
+        for idx,line in enumerate(lines):
+            if idx%1000==0:
+                print idx,'lines processed out of',numLines
+            words = line.split()
+            for word in words:
+                pFlag, nFlag, uFlag = False, False, False
+                root = word.lower()
+                root = filter(lambda x: x in printable, root)
+                root = ''.join(ch for ch in root if ch not in punctuations)
+                root = lemmatizer.lemmatize(root)
+
+                if root in self.nrcDict:
+                    for emotion in self.nrcDict[root]:
+                        pFlag = pFlag or emotion in positiveSet
+                        nFlag = nFlag or emotion in negativeSet
+                        uFlag = uFlag or emotion in unsureSet
+
+                if pFlag + nFlag + uFlag == 0:
+                    color = noColor
+                elif pFlag + nFlag + uFlag > 1:   # Multiple contrasting emotions
+                    color = multiColor
+                else:
+                    if pFlag:
+                        color = pColor
+                    elif nFlag:
+                        color = nColor
+                    elif uFlag:
+                        color = uColor
+
+                word = word.replace('_','')
+                if color == 'black':
+                    outString += ' ' + word
+                else:
+                    outString += ' '+'\\textcolor{'+color+'}{'+word+'}'
+            outString += '\n\n'
+        f = open(outpath, 'w')
+        f.write(outString)
+        f.close()
+
 if __name__ == '__main__':
     t0 = time.time()
 
     e = EmotionAnalyzer()
     books = ['PrideAndPrejudice', 'AliceInWonderland', 'AdventuresOfSherlockHolmes']
+    # books = ['PrideAndPrejudice_t_']
     for book in books:
-        e.analyze('../data/Books/'+book+'.txt', window=0.04)
+        print '\n\nAnalyzing',book
+        # e.analyze('../data/Books/'+book+'.txt', window=0.04)
+        e.color('../data/Books/'+book+'.txt')
 
     print 'Time taken: ', time.time()-t0
