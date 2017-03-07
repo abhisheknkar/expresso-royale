@@ -1,6 +1,6 @@
 import time
 
-def NRCReader(filepath='../data/NRC_Emotion.txt'):
+def NRCReader(filepath='../../data/common-data/lexicons/NRC_Emotion.txt'):
     f = open(filepath,'r')
     nrcDict = {}
     for line in f.readlines():
