@@ -6,18 +6,27 @@ import csv
 
 class EmotionThesaurusBookAnalyzer():
     def __init__(self):
+        contingencyFlag = False
+        morphologyFlag = False
+        cueAnalysisFlag = True
+
         self.emotionListPath = '../data/EmotionThesaurus/EmotionList.txt'
         self.thesaurusPath = '../data/EmotionThesaurus/Thesaurus.txt'
         self.graphPath = '../data/EmotionThesaurus/contingencyGraph.xml'
 
         self.emotionSet = self.getEmotionList()
-
-        # self.getContingencyList(writeToFile=True)
-        # self.createContingencyGraph(self.graphPath)
-
         self.generateCueDictionary()
         self.generateReverseCueIndex()
-        # self.morphologicalAnalysis()
+
+        if contingencyFlag:
+            self.getContingencyList(writeToFile=True)
+            self.createContingencyGraph(self.graphPath)
+
+        if morphologyFlag:
+            self.morphologicalAnalysis()
+
+        if cueAnalysisFlag:
+            self.cueAnalysis()
 
     def getEmotionList(self):
         f = open(self.emotionListPath,'r')
@@ -27,6 +36,7 @@ class EmotionThesaurusBookAnalyzer():
             emotionList.add(emotion.lower())
         return emotionList
 
+    # Creating Contingency List and Graph
     def getContingencyList(self, writeToFile=False):
         f = open(self.thesaurusPath,'r')
         self.contingencyDict = {}
@@ -87,6 +97,7 @@ class EmotionThesaurusBookAnalyzer():
         nx.write_graphml(self.G,path)
         # print nx.cycle_basis(self.G)
 
+    # General Analysis of Cues
     def generateCueDictionary(self):
         f = open(self.thesaurusPath,'r')
         cueAttributes = ['DEFINITION','PHYSICAL SIGNALS', 'INTERNAL SENSATIONS', 'MENTAL RESPONSES', 'CUES OF ACUTE OR LONG-TERM', 'CUES OF SUPPRESSED', 'WRITER’S TIP']
@@ -126,7 +137,7 @@ class EmotionThesaurusBookAnalyzer():
             else:
                 self.emotionCueDict[title][currAttribute].append(lstrip)
 
-    def generateReverseCueIndex(self,clean=False, toSort=False, toPrint=True):
+    def generateReverseCueIndex(self,clean=False, toSort=False, toPrint=False):
         # For each cue, preprocess, sort words alphabetically, store in dictionary
         self.emotionCueRI = {}
         cleaner = TextCleaner()
@@ -160,6 +171,56 @@ class EmotionThesaurusBookAnalyzer():
             f2.close()
             print "Cues in the intersection:", count
 
+    def cueAnalysis(self, toPrint=True):
+        # Objectives:
+            # 1: Get total distinct cues per emotion, per cue type
+            # 2: Find cues that have multiple emotion types
+            # 3: Find fraction of unambiguous cues per emotion, per cue type (make a table)
+
+        # 1: Get total distinct cues per emotion, per cue type
+        totalCueDict = {}
+
+        for emotion in self.emotionCueDict:
+            totalCueDict[emotion] = {}
+            for attribute in ['PHYSICAL SIGNALS', 'INTERNAL SENSATIONS', 'MENTAL RESPONSES', 'CUES OF ACUTE OR LONG-TERM', 'CUES OF SUPPRESSED']:
+                totalCueDict[emotion][attribute] = len(self.emotionCueDict[emotion][attribute])
+        self.writeCueDictToCSV(totalCueDict, 'results/totalCues.csv')
+
+        # 2: Find cues that have multiple emotion types
+        # Initialize the dictionaries
+        unambiguousCueDict = {}
+        ambiguousCueDict = {}
+        for emotion in self.emotionCueDict:
+            unambiguousCueDict[emotion] = {}
+            ambiguousCueDict[emotion] = {}
+            for attribute in ['PHYSICAL SIGNALS', 'INTERNAL SENSATIONS', 'MENTAL RESPONSES', 'CUES OF ACUTE OR LONG-TERM','CUES OF SUPPRESSED']:
+                unambiguousCueDict[emotion][attribute] = 0
+                ambiguousCueDict[emotion][attribute] = 0
+
+        for cue in self.emotionCueRI:
+            types = self.emotionCueRI[cue]
+            if len(types) == 1:
+                type = types[0]
+                unambiguousCueDict[type[0]][type[1]] += 1
+            else:
+                for type in types:
+                    ambiguousCueDict[type[0]][type[1]] += 1
+        self.writeCueDictToCSV(unambiguousCueDict, 'results/totalCues_unambiguous.csv')
+        self.writeCueDictToCSV(ambiguousCueDict, 'results/totalCues_ambiguous.csv')
+
+        # 3: Predicting the fraction of ambiguous cues
+        ambiguousCueFractionDict = {}
+        for emotion in self.emotionCueDict:
+            ambiguousCueFractionDict[emotion] = {}
+            for attribute in ['PHYSICAL SIGNALS', 'INTERNAL SENSATIONS', 'MENTAL RESPONSES', 'CUES OF ACUTE OR LONG-TERM', 'CUES OF SUPPRESSED']:
+                if ambiguousCueDict[emotion][attribute] == 0:
+                    ambiguousCueFractionDict[emotion][attribute] = 0
+                else:
+                    ambiguousCueFractionDict[emotion][attribute] = float(ambiguousCueDict[emotion][attribute])/totalCueDict[emotion][attribute]
+            ambiguousCueFractionDict[emotion]['TOTAL'] = float(sum(ambiguousCueDict[emotion].values()))/sum(totalCueDict[emotion].values())
+        self.writeCueDictToCSV(ambiguousCueFractionDict,'results/ambiguousCueFraction.csv',sumMode=False)
+
+    # Morphological Analysis of Cues
     def morphologicalAnalysis(self):
         pos = LemmatizerWithPOS()
         posDist = {}
@@ -188,5 +249,21 @@ class EmotionThesaurusBookAnalyzer():
 
             writer.writerow([emotion, posDist[emotion][''], posDist[emotion]['a'], posDist[emotion]['r'], posDist[emotion]['n'], posDist[emotion]['v'], totalWords])
         outFile.close()
+
+    def writeCueDictToCSV(self, cueDict, filepath, sumMode=True):
+        f1 = open(filepath,'w')
+        writer = csv.writer(f1,delimiter=',')
+        writer.writerow(['EMOTION', 'PHYSICAL SIGNALS', 'INTERNAL SENSATIONS', 'MENTAL RESPONSES', 'CUES OF ACUTE OR LONG-TERM', 'CUES OF SUPPRESSED','TOTAL'])
+
+        for emotion in self.emotionCueDict:
+            output = [emotion]
+            for attribute in ['PHYSICAL SIGNALS', 'INTERNAL SENSATIONS', 'MENTAL RESPONSES', 'CUES OF ACUTE OR LONG-TERM', 'CUES OF SUPPRESSED']:
+                output.append(cueDict[emotion][attribute])
+            if sumMode:
+                output.append(sum(cueDict[emotion].values()))
+            else:
+                output.append(cueDict[emotion]['TOTAL'])
+            writer.writerow(output)
+        f1.close()
 
 analyzer = EmotionThesaurusBookAnalyzer()
