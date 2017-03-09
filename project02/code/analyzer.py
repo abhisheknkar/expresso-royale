@@ -3,12 +3,14 @@ import networkx as nx
 import numpy as np
 from preprocessor import *
 import csv
+from NRCReader import *
 
 class EmotionThesaurusBookAnalyzer():
     def __init__(self):
-        contingencyFlag = False
-        morphologyFlag = False
+        contingencyFlag = True
+        morphologyFlag = True
         cueAnalysisFlag = True
+        emoLexFlag = True
 
         self.emotionListPath = '../data/EmotionThesaurus/EmotionList.txt'
         self.thesaurusPath = '../data/EmotionThesaurus/Thesaurus.txt'
@@ -27,6 +29,9 @@ class EmotionThesaurusBookAnalyzer():
 
         if cueAnalysisFlag:
             self.cueAnalysis()
+
+        if emoLexFlag:
+            self.compareWithEmoLex()
 
     def getEmotionList(self):
         f = open(self.emotionListPath,'r')
@@ -160,8 +165,8 @@ class EmotionThesaurusBookAnalyzer():
         if toPrint:
             print "Total cues:", len(self.emotionCueRI)
             count = 0
-            f1 = open('results/intersections.txt','w')
-            f2 = open('results/allcues.txt','w')
+            f1 = open('results/AmbiguousCues.txt','w')
+            f2 = open('results/AllCues.txt','w')
             for cue in self.emotionCueRI:
                 f2.write(cue + '\t' + ','.join([str(x) for x in self.emotionCueRI[cue]]) + '\n')
                 if len(self.emotionCueRI[cue]) > 1:
@@ -184,7 +189,7 @@ class EmotionThesaurusBookAnalyzer():
             totalCueDict[emotion] = {}
             for attribute in ['PHYSICAL SIGNALS', 'INTERNAL SENSATIONS', 'MENTAL RESPONSES', 'CUES OF ACUTE OR LONG-TERM', 'CUES OF SUPPRESSED']:
                 totalCueDict[emotion][attribute] = len(self.emotionCueDict[emotion][attribute])
-        self.writeCueDictToCSV(totalCueDict, 'results/totalCues.csv')
+        self.writeCueDictToCSV(totalCueDict, 'results/CueDistribution_Total.csv')
 
         # 2: Find cues that have multiple emotion types
         # Initialize the dictionaries
@@ -205,8 +210,8 @@ class EmotionThesaurusBookAnalyzer():
             else:
                 for type in types:
                     ambiguousCueDict[type[0]][type[1]] += 1
-        self.writeCueDictToCSV(unambiguousCueDict, 'results/totalCues_unambiguous.csv')
-        self.writeCueDictToCSV(ambiguousCueDict, 'results/totalCues_ambiguous.csv')
+        self.writeCueDictToCSV(unambiguousCueDict, 'results/CueDistribution_Unambiguous.csv')
+        self.writeCueDictToCSV(ambiguousCueDict, 'results/CueDistribution_Ambiguous.csv')
 
         # 3: Predicting the fraction of ambiguous cues
         ambiguousCueFractionDict = {}
@@ -218,14 +223,14 @@ class EmotionThesaurusBookAnalyzer():
                 else:
                     ambiguousCueFractionDict[emotion][attribute] = float(ambiguousCueDict[emotion][attribute])/totalCueDict[emotion][attribute]
             ambiguousCueFractionDict[emotion]['TOTAL'] = float(sum(ambiguousCueDict[emotion].values()))/sum(totalCueDict[emotion].values())
-        self.writeCueDictToCSV(ambiguousCueFractionDict,'results/ambiguousCueFraction.csv',sumMode=False)
+        self.writeCueDictToCSV(ambiguousCueFractionDict,'results/CueFraction_Ambiguous.csv',sumMode=False)
 
     # Morphological Analysis of Cues
     def morphologicalAnalysis(self):
         pos = LemmatizerWithPOS()
         posDist = {}
         # for cue in self.emotionCueRI:
-        outFile = open('morphoDist.csv','w')
+        outFile = open('MorphologicalDistributionOfCues.csv','w')
         writer = csv.writer(outFile,delimiter=',')
         writer.writerow(['Emotion','Other','Adjective','Adverb','Noun','Verb','Total Words'])
 
@@ -265,5 +270,49 @@ class EmotionThesaurusBookAnalyzer():
                 output.append(cueDict[emotion]['TOTAL'])
             writer.writerow(output)
         f1.close()
+
+    # Comparison with EmoLex
+    def compareWithEmoLex(self):
+        # For all the unigram cues, detect presence in EmoLex and report the comparison of thesaurus and EmoLex labels
+        nrcDict = NRCReader('../../common-data/lexicons/NRC_Emotion.txt')
+        lemmatizer = LemmatizerWithPOS()
+        origExists = 0
+        stemExists = 0
+        totalUnigrams = 0
+        f = open('results/EmoLexComparison.txt','w')
+
+        emoLexExistDict = {}
+        emoLexTotalDict = {}
+        for emotion in self.emotionCueDict:
+            emoLexExistDict[emotion] = {}
+            emoLexTotalDict[emotion] = {}
+            for attribute in ['PHYSICAL SIGNALS', 'INTERNAL SENSATIONS', 'MENTAL RESPONSES', 'CUES OF ACUTE OR LONG-TERM','CUES OF SUPPRESSED']:
+                emoLexExistDict[emotion][attribute] = 0
+                emoLexTotalDict[emotion][attribute] = 0
+
+        for cue in self.emotionCueRI:
+            cuesplit = cue.split()
+            if len(cuesplit) == 1:
+                output = ''
+                totalUnigrams += 1
+                stemmedCue = lemmatizer.lemmatize(cuesplit[0])
+                for types in self.emotionCueRI[cue]:
+                    emoLexTotalDict[types[0]][types[1]] += 1
+
+                if cuesplit[0] in nrcDict:
+                    origExists += 1
+                    output += cuesplit[0] + '\t' + str(self.emotionCueRI[cuesplit[0]]) + '\t' + str(nrcDict[cuesplit[0]]) + '\n'
+                elif stemmedCue in nrcDict:
+                    stemExists += 1
+                    output += cuesplit[0] + '/' + stemmedCue + '\t' + str(self.emotionCueRI[cuesplit[0]]) + '\t' + str(nrcDict[stemmedCue]) + '\n'
+                if len(output) > 0:
+                    f.write(output)
+                    for types in self.emotionCueRI[cue]:
+                        emoLexExistDict[types[0]][types[1]] += 1
+        f.close()
+
+        # print 'Total Unigram Cues: ',totalUnigrams, '\n', 'Words that exist in EmoLex: ',origExists,'\n', 'Lemmatized Words that exist:', stemExists
+        self.writeCueDictToCSV(emoLexExistDict,'results/EmoLexExist.csv')
+        self.writeCueDictToCSV(emoLexTotalDict,'results/EmoLexTotal.csv')
 
 analyzer = EmotionThesaurusBookAnalyzer()

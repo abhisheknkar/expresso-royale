@@ -39,13 +39,16 @@ class TextCleaner():
         self.cachedStopWords = STOPWORDS
         self.cachedPunctuations = set(string.punctuation)
         self.cachedPunctuations.remove('-')
+        self.printable = set(string.printable)
 
     def removeStopWords(self, content):
         removed = ' '.join([word for word in content.split() if word not in self.cachedStopWords])
         return removed
 
     def removePunctuation(self, text):
-        removed = ''.join(ch for ch in text if ch not in self.cachedPunctuations)
+        removed = ''.join(ch if ch not in self.cachedPunctuations else ' ' for ch in text)
+        # removed = ''.join(ch for ch in text if ch not in self.cachedPunctuations)
+        removed = ' '.join(removed.split())
         return removed
 
     def cleanV0(self, content):
@@ -58,11 +61,10 @@ class TextCleaner():
 
     def clean(self, content):
         content = content.lower()
+        content = self.removePunctuation(content)
 
-        printable = set(string.printable)
-        content = filter(lambda x: x in printable, content)
-
-        content = self.removeStopWords(content)
+        content = filter(lambda x: x in self.printable, content)
+        # content = self.removeStopWords(content)
 
         lemmatizer = LemmatizerWithPOS()
         return lemmatizer.lemmatize(content)
