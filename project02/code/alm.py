@@ -2,6 +2,7 @@
 # We specifically look for non verbal cues in the stories.
 import os
 from preprocessor import *
+import cPickle as pickle
 
 class AlmLine():
     def __init__(self, line, processFlag=True):
@@ -35,7 +36,7 @@ class AlmStory():
             self.lines.append(AlmLine(line))
 
 class AlmData():
-    def __init__(self):
+    def __init__(self, path=None):
         folder = '../../common-data/datasets/alm/'
         authors = ['HCAndersen', 'Grimms', 'Potter']
 
@@ -46,14 +47,17 @@ class AlmData():
             books = os.listdir(booksPath)
 
             for book in books:
+                print 'Reading: ', author, book
                 self.almDataset[(author,book[:-7])] = AlmStory(booksPath+book)
-                break
-            break
+
         self.createRI()
+
+        if path:
+            with open(path, 'wb') as outfile:
+                pickle.dump(self, outfile)
 
     def createRI(self):
         self.almRI = {}
-
         for book in self.almDataset:
             for idx,line in enumerate(self.almDataset[book].lines):
                 processed = line.processedSentence
@@ -63,4 +67,9 @@ class AlmData():
                     self.almRI[word].add((book[0],book[1],idx))
 
 if __name__ == '__main__':
-    alm = AlmData()
+    # alm = AlmData('results/alm.pickle')
+    with open('results/alm.pickle', 'rb') as infile:
+        alm = pickle.load(infile)
+    for word in alm.almRI:
+        print word, alm.almRI[word]
+    # pass

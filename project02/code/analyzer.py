@@ -4,13 +4,16 @@ import numpy as np
 from preprocessor import *
 import csv
 from NRCReader import *
+import cPickle as pickle
+from alm import *
 
 class EmotionThesaurusBookAnalyzer():
     def __init__(self):
-        contingencyFlag = True
-        morphologyFlag = True
-        cueAnalysisFlag = True
-        emoLexFlag = True
+        contingencyFlag = False
+        morphologyFlag = False
+        cueAnalysisFlag = False
+        emoLexFlag = False
+        almFlag = True
 
         self.emotionListPath = '../data/EmotionThesaurus/EmotionList.txt'
         self.thesaurusPath = '../data/EmotionThesaurus/Thesaurus.txt'
@@ -32,6 +35,9 @@ class EmotionThesaurusBookAnalyzer():
 
         if emoLexFlag:
             self.compareWithEmoLex()
+
+        if almFlag:
+            self.compareWithAlm()
 
     def getEmotionList(self):
         f = open(self.emotionListPath,'r')
@@ -314,5 +320,42 @@ class EmotionThesaurusBookAnalyzer():
         # print 'Total Unigram Cues: ',totalUnigrams, '\n', 'Words that exist in EmoLex: ',origExists,'\n', 'Lemmatized Words that exist:', stemExists
         self.writeCueDictToCSV(emoLexExistDict,'results/EmoLexExist.csv')
         self.writeCueDictToCSV(emoLexTotalDict,'results/EmoLexTotal.csv')
+
+    def compareWithAlm(self, matchThreshold=1):
+        # For each cue: 1: process the cue; 2: find the potential sentences from Alm that may match
+        # 3: percent match with each potential sentence; 4: for those with match > threshold, store the sentence, cue, label, cueType
+
+        with open('results/alm.pickle', 'rb') as infile:
+            alm = pickle.load(infile)
+        f = open('results/AlmCueCommon.txt','w')
+
+        cleaner = TextCleaner()
+        numCues = len(self.emotionCueRI)
+        wordCount = 0
+        wordsInAlm = 0
+        for idx,cue in enumerate(self.emotionCueRI):
+            if idx % 100 == 0:
+                print idx, 'out of', numCues, 'processed'
+
+            processedCue = cleaner.clean(cue)
+            # processedCue = cleaner.removeStopWords(processedCue)
+            words = processedCue.split()
+            potentialSentences = set()
+            for word in words:
+                wordCount += 1
+                if word in alm.almRI:
+                    wordsInAlm += 1
+                    [potentialSentences.add(x) for x in alm.almRI[word]]
+            for sentenceID in potentialSentences:
+                line = alm.almDataset[(sentenceID[0], sentenceID[1])].lines[sentenceID[2]]
+                storyWords = line.processedSentence.split()
+                common = set(words).intersection(set(storyWords))
+                frac = float(len(common))/len(set(words))
+                if frac >= matchThreshold:
+                    f.write(cue+'\t'+str(self.emotionCueRI[cue])+'\t'+line.sentence+'\t'+','.join(line.emotion)+'\n')
+
+        f.close()
+        # print wordCount, wordsInAlm
+
 
 analyzer = EmotionThesaurusBookAnalyzer()
