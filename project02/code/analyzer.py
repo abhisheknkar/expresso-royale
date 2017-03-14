@@ -12,8 +12,8 @@ class EmotionThesaurusBookAnalyzer():
         contingencyFlag = False
         morphologyFlag = False
         cueAnalysisFlag = False
-        emoLexFlag = False
-        almFlag = True
+        emoLexFlag = True
+        almFlag = False
 
         self.emotionListPath = '../data/EmotionThesaurus/EmotionList.txt'
         self.thesaurusPath = '../data/EmotionThesaurus/Thesaurus.txt'
@@ -34,7 +34,8 @@ class EmotionThesaurusBookAnalyzer():
             self.cueAnalysis()
 
         if emoLexFlag:
-            self.compareWithEmoLex()
+            # self.compareWithEmoLex()
+            self.evaluateLemmatizer()
 
         if almFlag:
             self.compareWithAlm()
@@ -321,41 +322,79 @@ class EmotionThesaurusBookAnalyzer():
         self.writeCueDictToCSV(emoLexExistDict,'results/EmoLexExist.csv')
         self.writeCueDictToCSV(emoLexTotalDict,'results/EmoLexTotal.csv')
 
+    # Comparison with Alm
     def compareWithAlm(self, matchThreshold=1):
         # For each cue: 1: process the cue; 2: find the potential sentences from Alm that may match
         # 3: percent match with each potential sentence; 4: for those with match > threshold, store the sentence, cue, label, cueType
 
+        multiWordAnalysisFlag = False
+        singleWordAnalysisFlag = True
+
         with open('results/alm.pickle', 'rb') as infile:
             alm = pickle.load(infile)
         f = open('results/AlmCueCommon.txt','w')
+        f1 = open('results/AlmCueCommonUnigrams.txt','w')
 
         cleaner = TextCleaner()
         numCues = len(self.emotionCueRI)
         wordCount = 0
         wordsInAlm = 0
+
+        unigramsInAlm = 0
+        unigramsTotal = 0
+
         for idx,cue in enumerate(self.emotionCueRI):
             if idx % 100 == 0:
                 print idx, 'out of', numCues, 'processed'
 
-            processedCue = cleaner.clean(cue)
-            # processedCue = cleaner.removeStopWords(processedCue)
-            words = processedCue.split()
-            potentialSentences = set()
-            for word in words:
-                wordCount += 1
-                if word in alm.almRI:
-                    wordsInAlm += 1
-                    [potentialSentences.add(x) for x in alm.almRI[word]]
-            for sentenceID in potentialSentences:
-                line = alm.almDataset[(sentenceID[0], sentenceID[1])].lines[sentenceID[2]]
-                storyWords = line.processedSentence.split()
-                common = set(words).intersection(set(storyWords))
-                frac = float(len(common))/len(set(words))
-                if frac >= matchThreshold:
-                    f.write(cue+'\t'+str(self.emotionCueRI[cue])+'\t'+line.sentence+'\t'+','.join(line.emotion)+'\n')
+            if multiWordAnalysisFlag:
+                processedCue = cleaner.clean(cue)
+                # processedCue = cleaner.removeStopWords(processedCue)
+                words = processedCue.split()
+                potentialSentences = set()
+                for word in words:
+                    wordCount += 1
+                    if word in alm.almRI:
+                        wordsInAlm += 1
+                        [potentialSentences.add(x) for x in alm.almRI[word]]
+                for sentenceID in potentialSentences:
+                    line = alm.almDataset[(sentenceID[0], sentenceID[1])].lines[sentenceID[2]]
+                    storyWords = line.processedSentence.split()
+                    common = set(words).intersection(set(storyWords))
+                    frac = float(len(common))/len(set(words))
+                    if frac >= matchThreshold:
+                        f.write(cue+'\t'+str(self.emotionCueRI[cue])+'\t'+line.sentence+'\t'+','.join(line.emotion)+'\n')
+
+            if singleWordAnalysisFlag:
+                if len(cue.split()) == 1:
+                    unigramsTotal += 1
+                    if cue in alm.almRI:
+                        unigramsInAlm += 1
+                        f1.write(cue + '\n')
 
         f.close()
+        f1.close()
         # print wordCount, wordsInAlm
+        print 'Unigrams in Alm: ', unigramsInAlm, 'out of', unigramsTotal
 
+    # Evaluate Lemmatizer with POS Tagger (on one of Alm's stories)
+    def evaluateLemmatizer(self, samples=10):
+        lemmatizer = LemmatizerWithPOS()
+        cleaner = TextCleaner()
+        with open('results/alm.pickle', 'rb') as infile:
+            alm = pickle.load(infile)
+        count = 0
+        for story in alm.almDataset:
+            for line in alm.almDataset[story].lines:
+                count += 1
+                cleaned = cleaner.clean(line.sentence)
+                tokens = nltk.word_tokenize(cleaned)
+                tagged = nltk.pos_tag(tokens)
+                shortTag = lemmatizer.get_wordnet_pos(tagged[0][1])
+                output = lemmatizer.lemmatize(cleaned)
+                print 'Original:', line.sentence, '\t; lemmatized output:', output
+            break
 
-analyzer = EmotionThesaurusBookAnalyzer()
+if __name__ == '__main__':
+    analyzer = EmotionThesaurusBookAnalyzer()
+    # lemmatizer = LemmatizerWithPOS()

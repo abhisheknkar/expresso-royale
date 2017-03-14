@@ -61,15 +61,16 @@ class AlmData():
         for book in self.almDataset:
             for idx,line in enumerate(self.almDataset[book].lines):
                 processed = line.processedSentence
+                # processed = line.sentence
                 for word in processed.split():
                     if word not in self.almRI:
                         self.almRI[word] = set()
                     self.almRI[word].add((book[0],book[1],idx))
 
 if __name__ == '__main__':
-    # alm = AlmData('results/alm.pickle')
-    with open('results/alm.pickle', 'rb') as infile:
-        alm = pickle.load(infile)
-    for word in alm.almRI:
-        print word, alm.almRI[word]
+    alm = AlmData('results/alm.pickle')
+    # with open('results/alm.pickle', 'rb') as infile:
+    #     alm = pickle.load(infile)
+    # for word in alm.almRI:
+    #     print word, alm.almRI[word]
     # pass
