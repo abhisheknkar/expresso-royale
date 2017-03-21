@@ -6,14 +6,19 @@ import csv
 from NRCReader import *
 import cPickle as pickle
 from alm import *
+import StanfordDependencies
+from bllipparser import RerankingParser
+import bllipparser
 
 class EmotionThesaurusBookAnalyzer():
     def __init__(self):
         contingencyFlag = False
         morphologyFlag = False
-        cueAnalysisFlag = False
-        emoLexFlag = True
+        cueAnalysisFlag = True
+        emoLexFlag = False
         almFlag = False
+        self.rrp = RerankingParser.fetch_and_load('WSJ-PTB3', verbose=True)
+        self.sd = StanfordDependencies.get_instance(backend='subprocess')
 
         self.emotionListPath = '../data/EmotionThesaurus/EmotionList.txt'
         self.thesaurusPath = '../data/EmotionThesaurus/Thesaurus.txt'
@@ -31,14 +36,18 @@ class EmotionThesaurusBookAnalyzer():
             self.morphologicalAnalysis()
 
         if cueAnalysisFlag:
-            self.cueAnalysis()
+            # self.cueAnalysis()
+            self.parseTreeEvaluation()
+            # self.LemmatizerEvaluation()
 
         if emoLexFlag:
             # self.compareWithEmoLex()
             self.evaluateLemmatizer()
 
         if almFlag:
-            self.compareWithAlm()
+            # self.compareWithAlm_v1()
+            self.compareWithAlm_v2()
+
 
     def getEmotionList(self):
         f = open(self.emotionListPath,'r')
@@ -323,7 +332,7 @@ class EmotionThesaurusBookAnalyzer():
         self.writeCueDictToCSV(emoLexTotalDict,'results/EmoLexTotal.csv')
 
     # Comparison with Alm
-    def compareWithAlm(self, matchThreshold=1):
+    def compareWithAlm_v1(self, matchThreshold=1):
         # For each cue: 1: process the cue; 2: find the potential sentences from Alm that may match
         # 3: percent match with each potential sentence; 4: for those with match > threshold, store the sentence, cue, label, cueType
 
@@ -377,23 +386,87 @@ class EmotionThesaurusBookAnalyzer():
         # print wordCount, wordsInAlm
         print 'Unigrams in Alm: ', unigramsInAlm, 'out of', unigramsTotal
 
+    def compareWithAlm_v2(self):
+        with open('results/alm.pickle', 'rb') as infile:
+            alm = pickle.load(infile)
+        f = open('results/rootLemmatized50.txt','w')
+        for idx,cue in enumerate(self.emotionCueRI):
+            try:
+                root = self.getRoot(cue)
+                f.write(cue + '\t\t' + root + '\n')
+                print idx
+            except:
+                print 'Failed:', idx
+                continue
+
+            if idx > 50:
+                break
+            # cleaner = TextCleaner()
+            # processedCue = cleaner.clean(cue)
+            # processedCue = cleaner.removeStopWords(processedCue)
+
+    def getRoot(self, sentence):
+        tree = self.rrp.simple_parse(sentence)
+
+        tokens = self.sd.convert_tree(tree)
+
+        # nbest_list = self.rrp.parse(sentence)
+        # tokens = nbest_list[0].ptb_parse.sd_tokens()
+
+        for token in tokens:
+            if token.deprel == 'root':
+                return token.form
+
+    def parseTreeEvaluation(self):
+        f = open('results/NPVP.txt', 'w')
+        dist = {}
+        for idx, cue in enumerate(self.emotionCueRI):
+            parse = self.rrp.simple_parse(cue)
+            tree = bllipparser.Tree(parse)
+            subtrees = tree.subtrees()
+            currPhrase = []
+            for subtree in subtrees:
+                if subtree.label == 'S':
+                    for subsubtree in subtree:
+                        currPhrase.append(subsubtree.label)
+                else:
+                    currPhrase.append(subtree.label)
+            currPhrase= ','.join(currPhrase)
+            if currPhrase not in dist:
+                dist[currPhrase] = 0
+            dist[currPhrase] += 1
+            f.write(cue+'\t'+currPhrase+'\n')
+            if idx % 100 == 0:
+                print idx
+        print dist
+        f.close()
+
     # Evaluate Lemmatizer with POS Tagger (on one of Alm's stories)
-    def evaluateLemmatizer(self, samples=10):
+    def LemmatizerEvaluation(self, numStories=1):
         lemmatizer = LemmatizerWithPOS()
         cleaner = TextCleaner()
+        lemmatizer = WordNetLemmatizer()
+        lemmatizerWithPOS = LemmatizerWithPOS()
+
         with open('results/alm.pickle', 'rb') as infile:
             alm = pickle.load(infile)
         count = 0
-        for story in alm.almDataset:
+        f = open('results/lemmatizerEvaluation.txt','w')
+        for idx,story in enumerate(alm.almDataset):
+            if idx > numStories:
+                break
             for line in alm.almDataset[story].lines:
                 count += 1
-                cleaned = cleaner.clean(line.sentence)
-                tokens = nltk.word_tokenize(cleaned)
+                tokens = nltk.word_tokenize(line.sentence)
                 tagged = nltk.pos_tag(tokens)
-                shortTag = lemmatizer.get_wordnet_pos(tagged[0][1])
-                output = lemmatizer.lemmatize(cleaned)
-                print 'Original:', line.sentence, '\t; lemmatized output:', output
-            break
+
+                for pair in tagged:
+                    shortTag = lemmatizerWithPOS.get_wordnet_pos(pair[1])
+                    if shortTag == '':
+                        output = lemmatizer.lemmatize(pair[0])
+                    else:
+                        output = lemmatizer.lemmatize(pair[0], shortTag)
+                    f.write(pair[0]+'\t'+pair[1]+'\t'+output+'\n')
 
 if __name__ == '__main__':
     analyzer = EmotionThesaurusBookAnalyzer()

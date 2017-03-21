@@ -30,7 +30,7 @@ class LemmatizerWithPOS():
             if shortTag == '':
                 output.append(lemmatizer.lemmatize(pair[0]))
             else:
-                output.append(lemmatizer.lemmatize(pair[0], self.get_wordnet_pos(pair[1])))
+                output.append(lemmatizer.lemmatize(pair[0], shortTag))
         return ' '.join(output)
 
 class TextCleaner():
