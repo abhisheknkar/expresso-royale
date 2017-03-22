@@ -1,1 +1,0 @@
-This project compares various emotion lexicon datasets.

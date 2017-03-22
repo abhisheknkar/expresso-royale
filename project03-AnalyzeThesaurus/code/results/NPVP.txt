@@ -1,0 +1,157 @@
+unhealthy obsession with the rival	NP
+moving away	VP
+being non-responsive during a group discussion or debate	VP
+unhurried relaxed movements	NP
+unkind thoughts toward the target	NP
+offering a gift favor or boon of appreciation	VP
+a quiet voice offering one-word responses	NP,VP
+swinging or tapping one’s foot to an easy beat	VP
+the belief that one deserves pain	NP
+laughing so hard it becomes soundless	VP
+expression blanching going pale	NP,VP
+clammy hands	NP
+a relaxed posture	NP
+going for a walk or leaving the situation in hopes of gaining a clear head	VP
+quick heartbeat	NP
+confining a laugh to a snort	VP
+sound of heartbeat thrashing in the ears	NP
+darting eye movements	VP
+a smile that has a genuine build and lights up the face	NP
+contentedly taking more time to complete tasks	NP,VP
+shoulders slumping or curling forward	NP
+the feeling of being taller bigger stronger	NP
+weaving hands into the hair and pulling	VP
+snapping at others or adopting a defensive tone	VP
+constant texting back and forth	NP
+list-making	NP
+visible vein throb	NP
+assuming a pose that draws attention to one’s best attributes	VP
+watering eyes that display an inward focus	NP
+difficulty eating and sleeping	NP
+displaying affection with friends or loved ones	VP
+choosing loose clothing over tight revealing ones	VP
+eyes wide and glowing	NP,ADJP
+judging too quickly	VP
+talking through the options aloud	VP
+despondency	NP
+a hand flying to the chest	NP
+avoiding crowds large events or social situations	VP
+gratification	NP
+stiffness in the neck and jaw	NP
+screaming	NP
+a two-fingered salute	NP
+squeezing the eyes shut	VP
+a corded neck	NP
+chest thrust out	NP,VP
+a twitchy feeling in the extremities	NP
+ringing ears	NP
+coughing as one agrees or supports a doubtful decision or stance	VP
+tight shoulders	NP
+initiating hateful gossip setting the enemy up starting rumors	VP
+drawing the limbs close to the body	VP
+a steady lower-pitched voice	NP
+feeling physically ill	VP
+folding the arms over the stomach	ADJP,NP
+glancing around uneasily	VP
+mimicking others who display confidence	VP
+hyper-protectiveness of personal space	NP
+hands clenching briefly then releasing	NP
+arms crossing the stomach in a protective huddle	NP
+tearing up	VP
+covering the mouth biting lips to hide a smile	VP
+tightness in the chest	VP
+unkind thoughts about the other person	NP
+angling torso away from others	VP
+fixing one’s hair and clothes to appear unaffected	VP
+anxiety attacks	NP
+a rapid heartbeat	NP
+unwashed hair	NP
+uncrossing and re-crossing the legs	VP
+mentally berating a time-waster	VP
+bringing up past examples when one supported the accuser or saved the day	VP
+lip biting or pressing the lips together	UCP
+fixating on an enemy stalking	VP
+shrugging	NP
+a strong handshake	NP
+quiet answers to questions	NP
+a hardening or clenching stomach	NP
+mirroring the object’s movements if a person	NP,NP
+feeling heavy or numb	VP
+taking up a task or chore to pass the time	VP
+irrational worries	NP
+being the first to speak	VP
+strong hygiene and personal grooming	NP
+looking down unable to meet someone’s eyes	VP
+tingling fingers and toes	VP
+discomfort in close spaces	NP
+blowing out a series of short breaths to gain control	VP
+strong posture	NP
+pressing the lips together to keep from speaking	VP
+taking inappropriate action or risks	VP
+a slow disbelieving head shake	NP
+a jolt through the body	NP
+inhaling deeply through the nose then exhaling through the mouth	VP
+a walk that accelerates into a sprint	NP
+pointing a finger while confronting	VP
+a thickening voice	NP
+interrupting	VP
+acting noncommittal interesting idea or that’s something to think about	VP
+increased heartbeat and pulse	NP
+squinting	VP
+mounting frustration that causes thoughts to blank	NP
+relaxing one’s posture	VP
+clutching at oneself elbows pressed to the sides	VP
+hot eyes and cheeks	NP
+reaching out to throttle hit or cause pain	VP
+leaning back creating space	VP
+apathetic toward goals desires or upcoming events	ADJP,NP
+looping the thumbs in the front pockets while standing	VP
+not engaging in further conversation	RB,VP
+minimizing another’s compliments	VP
+huddling crouching	NP
+mentally berating oneself over an action or poor decision	VP
+releasing an appreciative sigh	VP
+putting on a smile	VP
+making eye contact with others confidence	VP
+flinging out the arms and legs taking a wide stance	VP
+revisiting the hurdles leading to this moment	VP
+a chest that caves in	NP
+clasping one’s hands together	VP
+catlike stretches	NP
+criticism	NP
+swearing	NP
+a hand flap that dismisses the person or their idea	NP
+buying gifts for others or offering tokens of kindness	VP
+throat clearing swallowing	NP
+clutching at oneself	VP
+body collapsing in on itself	NP,VP
+shaking all over	VP
+falsely belittling or minimizing the attributes of the desired advantage or object	VP
+leaning in or forward	VP
+veiled anger or light sarcasm	NP
+demanding those with influence do something to change the outcome	VP,VP
+face turning ashen white pallid	VP
+clutching oneself gripping the elbows rubbing the arms	VP
+weak muscles	NP
+covering the mouth	VP
+wrist twisting	NP
+teeth chattering	NP
+actively listening for something	VP
+yelling arguing	VP
+gossiping with others running a person down for their choices or ideas	VP
+a shake of the head	NP
+daydreaming about people one would like to have relationships with	VP
+heavy or sluggish heartbeat	NP
+gripping the sides of the head as if to cover the ears	VP
+a desire to carry out a vendetta via vandalism theft etc	NP
+not thinking about it putting it off to savor later	RB,VP
+crumpling onto a chair or sofa	VP
+time feels like it’s slowing down	NP,VP
+a shaky voice	NP
+sudden explosions over seemingly little things	NP
+willingness to escape by any means	NP
+blank features	NP
+a need to dominate or control	DT,VP
+fearing that something will happen to screw things up	S,VP
+tapping a pencil against a notepad or table	VP
+clutching a token that is the focal point for the emotion	VP
