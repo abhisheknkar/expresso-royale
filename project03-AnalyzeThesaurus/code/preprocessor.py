@@ -5,6 +5,20 @@ from nltk.stem.wordnet import WordNetLemmatizer
 from nltk.corpus import stopwords
 STOPWORDS = stopwords.words("english")
 
+# CORENLP_PATH = '/home/abhishek/tools/corenlp-python'
+# import sys
+# if not CORENLP_PATH in sys.path:
+#     sys.path.append(CORENLP_PATH)
+
+# import jsonrpclib
+# from simplejson import loads
+# from corenlp import StanfordCoreNLP, batch_parse
+# import xmltodict
+# from corenlp import *
+import jsonrpc
+from simplejson import loads
+
+
 class LemmatizerWithPOS():
     def get_wordnet_pos(self, treebank_tag):
         if treebank_tag.startswith('J'):
@@ -54,6 +68,7 @@ class TextCleaner():
     def cleanV0(self, content):
         content = content.lower()
         content = self.removePunctuation(content)
+        content = filter(lambda x: x in self.printable, content)
         content = self.removeStopWords(content)
 
         lemmatizer = LemmatizerWithPOS()
@@ -70,7 +85,20 @@ class TextCleaner():
         return lemmatizer.lemmatize(content)
 
 if __name__ == '__main__':
-    t = TextCleaner()
+    # t = TextCleaner()
 
-    content = 'i am trying to form sentences'
-    print t.clean(content)
+    # print t.clean(content)
+
+    # corenlp_dir = "/home/abhishek/tools/corenlp-python/stanford-corenlp-full-2014-08-27/"
+    # raw_text_directory = "/home/abhishek/tools/corenlp-python/sample_raw_text/"
+    #
+    # corenlp = StanfordCoreNLP(corenlp_dir)  # wait a few minutes...
+    # corenlp.raw_parse("Parse it")
+    #
+    # parsed = batch_parse(raw_text_directory, corenlp_dir, raw_output=True)
+    # print xmltodict.parse(parsed)
+
+    server = jsonrpc.ServerProxy(jsonrpc.JsonRpc20(), jsonrpc.TransportTcpIp(addr=("127.0.0.1", 8080)))
+
+    result = loads(server.parse("Hello world.  It is so beautiful"))
+    print "Result", result

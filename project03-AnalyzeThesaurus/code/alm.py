@@ -12,6 +12,7 @@ class AlmLine():
         self.emotion = self.splitColumn(lsplit[1])
         self.mood = self.splitColumn(lsplit[2])
         self.sentence = ' '.join(lsplit[3:])
+        self.cues = []
         if processFlag:
             self.processedSentence = self.process(self.sentence)
         else:

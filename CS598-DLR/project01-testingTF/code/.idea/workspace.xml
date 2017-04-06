@@ -1,0 +1,748 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="eb6f15ef-9351-4081-8b38-c35b1aac7cdd" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="dropout.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../../../../CS598-DLR/project01-testingTF/code/dropout.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="528">
+              <caret line="72" column="12" lean-forward="false" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>bpl</find>
+      <find>layers</find>
+      <find>variable_scope</find>
+      <find>weights</find>
+      <find>RNNCEll</find>
+      <find>batch_norm</find>
+      <find>basic</find>
+      <find>linear</find>
+      <find>import</find>
+      <find>python</find>
+      <find>ops</find>
+      <find>rnn_cell</find>
+      <find>rnncell</find>
+      <find>RNNCell</find>
+      <find>x = tf.split</find>
+      <find>x = tf.</find>
+      <find>tf.spli</find>
+      <find>tf.sess</find>
+      <find>learning_rate</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/vanillaRNN.py" />
+        <option value="$PROJECT_DIR$/testLSTM.py" />
+        <option value="$PROJECT_DIR$/BN_test.py" />
+        <option value="$PROJECT_DIR$/tf_upgrade.py" />
+        <option value="$PROJECT_DIR$/report.txt" />
+        <option value="$PROJECT_DIR$/BN_LSTM_new.py" />
+        <option value="$PROJECT_DIR$/BN_LSTM.py" />
+        <option value="$PROJECT_DIR$/BN_test_new.py" />
+        <option value="$PROJECT_DIR$/dropout.py" />
+        <option value="$PROJECT_DIR$/BN.py" />
+        <option value="$PROJECT_DIR$/BN_new.py" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_3.py" />
+        <option value="$PROJECT_DIR$/learningRate.py" />
+        <option value="$PROJECT_DIR$/activation.py" />
+        <option value="$PROJECT_DIR$/../../../../CS598-DLR/project01-testingTF/code/dropout.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="67" />
+    <option name="y" value="24" />
+    <option name="width" value="1853" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../project03-AnalyzeThesaurus/code" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/Languages" value="Python" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/BN_buggy" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.dropout">
+    <configuration default="false" name="BN_new" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="code" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/BN_new.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="activation" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="code" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/activation.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="scratch_3" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$APPLICATION_CONFIG_DIR$/scratches" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="code" />
+      <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/scratch_3.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="learningRate" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="code" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/learningRate.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="dropout" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../../../CS598-DLR/project01-testingTF/code" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="code" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../../../CS598-DLR/project01-testingTF/code/dropout.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="code" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="code" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Attests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="code" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="code" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Nosetests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="code" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="code" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="py.test">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="code" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="testToRun" value="" />
+      <option name="keywords" value="" />
+      <option name="params" value="" />
+      <option name="USE_PARAM" value="false" />
+      <option name="USE_KEYWORD" value="false" />
+      <method />
+    </configuration>
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="Python.BN_new" />
+      <item index="1" class="java.lang.String" itemvalue="Python.activation" />
+      <item index="2" class="java.lang.String" itemvalue="Python.scratch_3" />
+      <item index="3" class="java.lang.String" itemvalue="Python.learningRate" />
+      <item index="4" class="java.lang.String" itemvalue="Python.dropout" />
+    </list>
+    <recent_temporary>
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python.dropout" />
+        <item index="1" class="java.lang.String" itemvalue="Python.activation" />
+        <item index="2" class="java.lang.String" itemvalue="Python.learningRate" />
+        <item index="3" class="java.lang.String" itemvalue="Python.scratch_3" />
+        <item index="4" class="java.lang.String" itemvalue="Python.BN_new" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="eb6f15ef-9351-4081-8b38-c35b1aac7cdd" name="Default" comment="" />
+      <created>1491094771642</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1491094771642</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="67" y="24" width="1853" height="1056" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24986508" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32910156" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/BN_new.py</url>
+          <line>81</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/BN_new.py</url>
+          <line>47</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="3" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/BN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2002">
+          <caret line="91" column="26" lean-forward="false" selection-start-line="91" selection-start-column="26" selection-end-line="91" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vanillaRNN.py" />
+    <entry file="file://$USER_HOME$/tensorflow/local/lib/python2.7/site-packages/tensorflow/python/ops/variables.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="196" column="0" lean-forward="false" selection-start-line="196" selection-start-column="0" selection-end-line="196" selection-end-column="0" />
+          <folding>
+            <marker date="1491242027892" expanded="true" signature="0:688" ph="..." />
+            <marker date="1491242027892" expanded="false" signature="711:1350" ph="import ..." />
+            <marker date="1491242027892" expanded="true" signature="1376:33282" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="1379:5037" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
+            <marker date="1491242027892" expanded="true" signature="5388:8846" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="5393:8199" ph="&quot;&quot;&quot;Creates a new variable with value `initial_value`....&quot;&quot;&quot;" />
+            <marker date="1491242027892" expanded="true" signature="8220:8501" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="8321:8432" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="8347:8431" ph="&quot;...&quot;" />
+            <marker date="1491242027892" expanded="true" signature="8511:8846" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="8868:8899" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="9245:14797" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="9250:11232" ph="&quot;&quot;&quot;Creates a new variable from arguments....&quot;&quot;&quot;" />
+            <marker date="1491242027892" expanded="true" signature="11525:11704" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="11560:11668" ph="&quot;...&quot;" />
+            <marker date="1491242027892" expanded="true" signature="11896:14675" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="12016:14675" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="12042:13030" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="12053:12214" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="12544:13030" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="12611:12871" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="13112:13656" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="13365:13505" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="13760:14010" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="13881:14010" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="14198:14372" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="14411:14531" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="14545:14675" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="14861:15915" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="14866:15055" ph="&quot;&quot;&quot;Creates a new variable from `VariableDef` protocol buffer....&quot;&quot;&quot;" />
+            <marker date="1491242027892" expanded="true" signature="15720:15838" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="15947:16033" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="16057:16266" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="16094:16240" ph="&quot;&quot;&quot;Converts this variable to a Tensor....&quot;&quot;&quot;" />
+            <marker date="1491242027892" expanded="true" signature="16289:16679" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="16294:16621" ph="&quot;&quot;&quot;Dummy method to prevent iteration. Do not call....&quot;&quot;&quot;" />
+            <marker date="1491242027892" expanded="true" signature="16699:17475" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="16704:17449" ph="&quot;&quot;&quot;Returns the last snapshot of this variable....&quot;&quot;&quot;" />
+            <marker date="1491242027892" expanded="true" signature="17500:17806" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="17505:17747" ph="&quot;&quot;&quot;Returns the value of this variable, read in the current context....&quot;&quot;&quot;" />
+            <marker date="1491242027892" expanded="true" signature="17825:18331" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="17830:18305" ph="&quot;&quot;&quot;Returns a reference to this variable....&quot;&quot;&quot;" />
+            <marker date="1491242027892" expanded="true" signature="18362:18560" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="18367:18493" ph="&quot;&quot;&quot;Overrides the shape for this variable....&quot;&quot;&quot;" />
+            <marker date="1491242027892" expanded="true" signature="18593:19611" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="18598:19563" ph="&quot;&quot;&quot;In a session, computes and returns the value of this variable....&quot;&quot;&quot;" />
+            <marker date="1491242027892" expanded="true" signature="19643:21049" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="19648:20495" ph="&quot;&quot;&quot;Returns the value of the initialized variable....&quot;&quot;&quot;" />
+            <marker date="1491242027892" expanded="true" signature="20536:21049" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="20597:21049" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="20606:20780" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="20825:20928" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="20942:21049" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="21089:21463" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="21094:21432" ph="&quot;&quot;&quot;Returns the Tensor used as the initial value for the variable....&quot;&quot;&quot;" />
+            <marker date="1491242027892" expanded="true" signature="21510:21954" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="21515:21878" ph="&quot;&quot;&quot;Assigns a new value to the variable....&quot;&quot;&quot;" />
+            <marker date="1491242027892" expanded="true" signature="22005:22451" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="22010:22371" ph="&quot;&quot;&quot;Adds a value to this variable....&quot;&quot;&quot;" />
+            <marker date="1491242027892" expanded="true" signature="22502:22964" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="22507:22884" ph="&quot;&quot;&quot;Subtracts a value from this variable....&quot;&quot;&quot;" />
+            <marker date="1491242027892" expanded="true" signature="23023:23831" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="23028:23546" ph="&quot;&quot;&quot;Subtracts `IndexedSlices` from this variable....&quot;&quot;&quot;" />
+            <marker date="1491242027892" expanded="true" signature="23864:24603" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="23869:24541" ph="&quot;&quot;&quot;Increments this variable until it reaches `limit`....&quot;&quot;&quot;" />
+            <marker date="1491242027892" expanded="true" signature="24643:25989" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="24648:25701" ph="&quot;&quot;&quot;Load new value into this variable...&quot;&quot;&quot;" />
+            <marker date="1491242027892" expanded="true" signature="25776:25910" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="25811:25909" ph="&quot;...&quot;" />
+            <marker date="1491242027892" expanded="true" signature="26105:26535" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="26272:26429" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="26307:26399" ph="&quot;...&quot;" />
+            <marker date="1491242027892" expanded="true" signature="26583:26957" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="26766:26893" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="27009:27556" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="27046:27236" ph="&quot;&quot;&quot;Defer an operator overload to `ops.Tensor`....&quot;&quot;&quot;" />
+            <marker date="1491242027892" expanded="true" signature="27264:27370" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="27560:27933" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="27991:28059" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="28097:28184" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="28217:28289" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="28321:28393" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="28422:28495" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="28527:28599" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="28623:28749" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="28628:28711" ph="&quot;&quot;&quot;The `TensorShape` of this variable....&quot;&quot;&quot;" />
+            <marker date="1491242027892" expanded="true" signature="28791:29684" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="28796:29059" ph="&quot;&quot;&quot;Converts a `Variable` to a `VariableDef` protocol buffer....&quot;&quot;&quot;" />
+            <marker date="1491242027892" expanded="true" signature="29146:29656" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="29517:29635" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="29752:29913" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="29945:32993" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="29950:30245" ph="&quot;&quot;&quot;Information on how to save this Variable as a slice....&quot;&quot;&quot;" />
+            <marker date="1491242027892" expanded="true" signature="30483:31800" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="30490:31209" ph="&quot;&quot;&quot;Create a `SaveSliceInfo`....&quot;&quot;&quot;" />
+            <marker date="1491242027892" expanded="true" signature="31239:31644" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="31656:31800" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="31835:32114" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="31991:32074" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="32158:32993" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="32165:32421" ph="&quot;&quot;&quot;Returns a SaveSliceInfoDef() proto....&quot;&quot;&quot;" />
+            <marker date="1491242027892" expanded="true" signature="32507:32961" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="33045:33214" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="33050:33170" ph="&quot;&quot;&quot;Sets the slice info for this `Variable`....&quot;&quot;&quot;" />
+            <marker date="1491242027892" expanded="true" signature="33249:33282" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="33319:39883" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="33421:34270" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="33426:33713" ph="&quot;&quot;&quot;An iterator that allows accessing the underlying `Variable` objects....&quot;&quot;&quot;" />
+            <marker date="1491242027892" expanded="true" signature="33760:33835" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="33860:33878" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="33903:33958" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="33979:34270" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="34340:36879" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="34345:35202" ph="&quot;&quot;&quot;Creates a new partitioned variable wrapper....&quot;&quot;&quot;" />
+            <marker date="1491242027892" expanded="true" signature="35255:35348" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="35708:35864" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="35746:35864" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="35869:35981" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="36060:36199" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="36237:36349" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="36413:36601" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="36448:36536" ph="&quot;...&quot;" />
+            <marker date="1491242027892" expanded="true" signature="36902:37031" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="37053:37289" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="37137:37253" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="37319:37460" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="37482:38513" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="37487:37842" ph="&quot;&quot;&quot;Returns the overall concatenated value as a `Tensor`....&quot;&quot;&quot;" />
+            <marker date="1491242027892" expanded="true" signature="37880:37988" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="38066:38247" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="38110:38224" ph="&quot;...&quot;" />
+            <marker date="1491242027892" expanded="true" signature="38537:38907" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="38542:38838" ph="&quot;&quot;&quot;Returns the overall concatenated value as a `Tensor`....&quot;&quot;&quot;" />
+            <marker date="1491242027892" expanded="true" signature="38997:39431" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="39113:39270" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="39148:39240" ph="&quot;...&quot;" />
+            <marker date="1491242027892" expanded="true" signature="39285:39394" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="39462:39484" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="39516:39539" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="39563:39586" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="39619:39650" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="39680:39708" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="39755:39883" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="39909:40446" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="39912:40386" ph="&quot;&quot;&quot;Returns global variables....&quot;&quot;&quot;" />
+            <marker date="1491242027892" expanded="true" signature="40538:40601" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="40632:40988" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="40635:40791" ph="&quot;&quot;&quot;Returns all variables and `SaveableObject`s that must be checkpointed....&quot;&quot;&quot;" />
+            <marker date="1491242027892" expanded="true" signature="41013:41660" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="41016:41601" ph="&quot;&quot;&quot;Returns local variables....&quot;&quot;&quot;" />
+            <marker date="1491242027892" expanded="true" signature="41685:41862" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="41688:41803" ph="&quot;&quot;&quot;Returns all variables in the MODEL_VARIABLES collection....&quot;&quot;&quot;" />
+            <marker date="1491242027892" expanded="true" signature="41891:42287" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="41894:42224" ph="&quot;&quot;&quot;Returns all variables created with `trainable=True`....&quot;&quot;&quot;" />
+            <marker date="1491242027892" expanded="true" signature="42321:42775" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="42324:42707" ph="&quot;&quot;&quot;Returns all variables that maintain their moving averages....&quot;&quot;&quot;" />
+            <marker date="1491242027892" expanded="true" signature="42827:43645" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="42830:43506" ph="&quot;&quot;&quot;Returns an Op that initializes a list of variables....&quot;&quot;&quot;" />
+            <marker date="1491242027892" expanded="true" signature="43765:43857" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="43895:44151" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="43898:44100" ph="&quot;&quot;&quot;Returns an Op that initializes global variables....&quot;&quot;&quot;" />
+            <marker date="1491242027892" expanded="true" signature="44261:44348" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="44385:44645" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="44388:44595" ph="&quot;&quot;&quot;Returns an Op that initializes all local variables....&quot;&quot;&quot;" />
+            <marker date="1491242027892" expanded="true" signature="44756:44841" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="44882:45142" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="44885:45089" ph="&quot;&quot;&quot;Tests if a variable has been initialized....&quot;&quot;&quot;" />
+            <marker date="1491242027892" expanded="true" signature="45193:46540" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="45196:45907" ph="&quot;&quot;&quot;Returns an Op to check if variables are initialized....&quot;&quot;&quot;" />
+            <marker date="1491242027892" expanded="true" signature="46077:46260" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="46151:46260" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="46303:46540" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="46343:46448" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="46667:48352" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="46670:47213" ph="&quot;&quot;&quot;Adds ops to list the names of uninitialized variables....&quot;&quot;&quot;" />
+            <marker date="1491242027892" expanded="true" signature="47236:47578" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="47387:47578" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="47465:47578" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="47607:48352" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="47628:47815" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="47635:47758" ph="..." />
+            <marker date="1491242027892" expanded="true" signature="47825:48352" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BN_buggy/BN_LSTM.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="140" column="0" lean-forward="true" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tf_upgrade.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="642">
+          <caret line="704" column="0" lean-forward="true" selection-start-line="704" selection-start-column="0" selection-end-line="704" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/report.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="902">
+          <caret line="41" column="23" lean-forward="false" selection-start-line="41" selection-start-column="23" selection-end-line="41" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/tensorflow/python/ops/rnn_cell.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BN_buggy/BN_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="72" column="10" lean-forward="false" selection-start-line="72" selection-start-column="10" selection-end-line="72" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BN_buggy/BN_test_new.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="6" lean-forward="false" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BN_buggy/BN_LSTM_new.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="114" column="23" lean-forward="true" selection-start-line="114" selection-start-column="23" selection-end-line="114" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BN_LSTM.py" />
+    <entry file="file://$PROJECT_DIR$/BN_test.py" />
+    <entry file="file://$PROJECT_DIR$/BN_LSTM_new.py" />
+    <entry file="file://$PROJECT_DIR$/BN_test_new.py" />
+    <entry file="file://$PROJECT_DIR$/dropout.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-304">
+          <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-176">
+          <caret line="34" column="11" lean-forward="false" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BN_new.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="160" column="34" lean-forward="true" selection-start-line="160" selection-start-column="34" selection-end-line="160" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="10" lean-forward="true" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/learningRate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="140" column="2" lean-forward="false" selection-start-line="140" selection-start-column="2" selection-end-line="140" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="492">
+          <caret line="67" column="0" lean-forward="true" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../CS598-DLR/project01-testingTF/code/dropout.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="72" column="12" lean-forward="false" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

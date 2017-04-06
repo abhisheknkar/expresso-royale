@@ -471,8 +471,57 @@ class Thesaurus_Compare():
             # processedCue = cleaner.clean(cue)
             # processedCue = cleaner.removeStopWords(processedCue)
 
+class CompareCorpora():
+    def __init__(self):
+        # WKB, ANEW, EmoLex, Alm
+        self.lexicons = {}
+        self.lexicons['NRC'] = self.readNRC()
+        self.lexicons['WKB'] = self.readWKB()
+        self.lexicons['Alm'] = self.readAlm()
+        self.lexicons['Thesaurus'] = self.readThesaurus()
+        self.intersect()
+
+    def readNRC(self):
+        nrcDict = NRCReader('../../common-data/lexicons/NRC_Emotion.txt')
+        return set(nrcDict.keys())
+
+    def readWKB(self, filepath = '../../common-data/lexicons/WKB.csv'):
+        f = open(filepath, 'r')
+        words = set()
+        for idx, line in enumerate(f.readlines()):
+            if idx == 0:
+                continue
+            lsplit = line.split(',')
+            if len(lsplit) > 1:
+                words.add(lsplit[1])
+        return words
+
+    def readAlm(self):
+        with open('../../project03-AnalyzeThesaurus/code/results/alm.pickle', 'rb') as infile:
+            alm = pickle.load(infile)
+        return set(alm.almRI.keys())
+
+    def readThesaurus(self):
+        thesaurus = Thesaurus()
+        words = set()
+        for cue in thesaurus.emotionCueRI:
+            if len(cue.split()) == 1:
+                words.add(cue)
+        return words
+
+    def intersect(self):
+        self.intersections = {}
+        print '\t','\t'.join(self.lexicons.keys())
+        for lexicon1 in self.lexicons:
+            self.intersections[lexicon1] = {}
+            for lexicon2 in self.lexicons:
+                common = self.lexicons[lexicon1].intersection(self.lexicons[lexicon2])
+                self.intersections[lexicon1][lexicon2] = len(common)
+            print lexicon1, self.intersections[lexicon1].values()
+
 if __name__ == '__main__':
     # analyzer = EmotionThesaurusBookAnalyzer()
     # lemmatizer = LemmatizerWithPOS()
 
-    t = Thesaurus_CueAnalysis()
+    # t = Thesaurus_CueAnalysis()
+    compare = CompareCorpora()
